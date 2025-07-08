@@ -1,10 +1,10 @@
-
 import 'package:flutter/material.dart';
 
 class UnderlinedText extends StatelessWidget {
   const UnderlinedText({
     super.key,
-    required this.buttonText, required this.underlineTextColor,
+    required this.buttonText,
+    required this.underlineTextColor,
   });
 
   final String buttonText;
@@ -14,6 +14,7 @@ class UnderlinedText extends StatelessWidget {
   Widget build(BuildContext context) {
     return IntrinsicWidth(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
             buttonText,

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/utils.dart';
 import 'package:the_entertainer/app/views/modules/countries_bottom_sheet.dart';
 import 'package:the_entertainer/app/views/widgets/product_card.dart';
 import 'package:the_entertainer/app/views/widgets/underlined_text.dart';
@@ -135,7 +137,7 @@ class ProductBottomSheet extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: GestureDetector(
               onTap: () {
-                Navigator.pop(context); // Close the bottom sheet
+                Get.back(); // Close the bottom sheet
               },
               child: UnderlinedText(
                 buttonText: 'سأقرر لاحقا',

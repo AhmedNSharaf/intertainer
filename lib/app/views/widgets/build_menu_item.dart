@@ -6,34 +6,33 @@ class BuildMenuItem extends StatelessWidget {
     required this.title,
     required this.label,
     required this.backgroundColor,
-    required this.icon, this.onTap,
+    required this.widget,
+    this.onTap,
   });
 
   final String title;
   final String label;
   final Color? backgroundColor;
-  final IconData? icon;
+  final Widget? widget;
   final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
       onTap: onTap,
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         child: Row(
           children: [
             Icon(Icons.arrow_back_ios, color: Colors.black, size: 20),
-            icon != null
-                ? Icon(icon, color: Colors.black, size: 24)
-                : SizedBox.shrink(),
+            widget ?? SizedBox.shrink(),
             if (label.isNotEmpty) ...[
-              SizedBox(width: 8),
+              // SizedBox(width: 0),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 decoration: BoxDecoration(
                   color: backgroundColor ?? Colors.transparent,
-      
+
                   borderRadius: BorderRadius.circular(4),
                 ),
                 child: Text(

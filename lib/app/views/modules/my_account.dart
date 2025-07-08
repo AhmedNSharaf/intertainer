@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:the_entertainer/app/views/modules/analytics.dart';
 import 'package:the_entertainer/app/views/modules/select_product_bottom_sheet.dart';
 import 'package:the_entertainer/app/views/widgets/build_icon_button.dart';
 import 'package:the_entertainer/app/views/widgets/build_menu_item.dart';
@@ -159,14 +160,22 @@ class ProfileDashboardScreen extends StatelessWidget {
                   title: 'تفضيلاتي',
                   label: '20%',
                   backgroundColor: Colors.red.withOpacity(0.2),
-                  icon: null,
+                  widget: null,
                 ),
                 Divider(color: Colors.grey[300]),
                 BuildMenuItem(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Analytics(),
+                      ),
+                    );
+                  },
                   title: 'التحليلات والادخار',
                   label: '',
                   backgroundColor: null,
-                  icon: Icons.analytics_outlined,
+                  widget: Image.asset('asset/bar-chart.png', width: 24),
                 ),
                 Divider(color: Colors.grey[300]),
 
@@ -182,7 +191,7 @@ class ProfileDashboardScreen extends StatelessWidget {
                   title: 'إهداء لصديق',
                   label: '',
                   backgroundColor: null,
-                  icon: Icons.card_giftcard_outlined,
+                  widget: Icon(Icons.card_giftcard_outlined),
                 ),
                 Divider(color: Colors.grey[300]),
 

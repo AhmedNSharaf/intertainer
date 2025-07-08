@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class LocationBottomSheet extends StatefulWidget {
   const LocationBottomSheet({Key? key}) : super(key: key);
@@ -47,7 +48,7 @@ class _LocationBottomSheetState extends State<LocationBottomSheet> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 IconButton(
-                  onPressed: () => Navigator.pop(context),
+                  onPressed: () => Get.back(),
                   icon: const Icon(Icons.close, color: Colors.black87),
                 ),
                 const Column(
@@ -109,7 +110,7 @@ class LocationCard extends StatelessWidget {
     required this.isSelected,
     required this.onTap,
   });
-  
+
   final String name;
   final String flagImage;
   final bool isSelected;
@@ -150,7 +151,7 @@ class LocationCard extends StatelessWidget {
                       },
                     ),
                     const SizedBox(width: 12),
-                    
+
                     // Location Name
                     Expanded(
                       child: Text(
@@ -158,11 +159,13 @@ class LocationCard extends StatelessWidget {
                         style: TextStyle(
                           color: isSelected ? Colors.green : Colors.black,
                           fontSize: 16,
-                          fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
+                          fontWeight: isSelected
+                              ? FontWeight.w600
+                              : FontWeight.normal,
                         ),
                       ),
                     ),
-                    
+
                     // Selection Icon - Only show for selected items
                     if (isSelected)
                       Container(
